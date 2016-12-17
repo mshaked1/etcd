@@ -1,0 +1,9 @@
+version: '2'
+services:
+  etcd:
+    image: quay.io/coreos/etcd:v2.3.7
+    ports:
+      - "2379:2379"
+      - "2380:2380"
+    container_name: local.etcd
+    command: ['-name', 'local.etcd', '-listen-client-urls', 'http://0.0.0.0:2379', '-advertise-client-urls', 'http://etcd:2379']
